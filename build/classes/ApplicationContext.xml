@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
+	
+	<bean name="user" class="com.study.bean.User"></bean>
+	<!-- 静态方法工厂创建 -->
+	<bean name="user2" class="com.study.dao.UserFactory" factory-method="getUser"></bean>
+	
+	<!-- 普通方法工厂创建 -->
+	<bean name="user3" factory-bean="UserFactory" factory-method="getUser2"></bean>
+	<bean name="UserFactory" class="com.study.dao.UserFactory" ></bean>
+	
+</beans>

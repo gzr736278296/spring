@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd ">
+	
+	<!-- <bean name="user" class="com.study.bean.User">
+		<property name="name" value="bob"></property>
+	</bean> -->
+	<bean name="user" class="com.study.injection.User">
+		<constructor-arg name="name" value="bob"></constructor-arg>
+		<constructor-arg name="car" ref="car"></constructor-arg>
+	</bean>
+	<bean name="car" class="com.study.injection.Car">
+		<property name="value" value="1000"></property>
+	</bean>
+</beans> 
